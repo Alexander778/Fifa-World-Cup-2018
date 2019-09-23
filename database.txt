@@ -1,0 +1,158 @@
+-- phpMyAdmin SQL Dump
+-- version 4.7.7
+-- https://www.phpmyadmin.net/
+--
+-- Хост: localhost
+-- Время создания: Май 22 2018 г., 16:22
+-- Версия сервера: 5.6.38
+-- Версия PHP: 7.2.1
+
+SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
+SET time_zone = "+00:00";
+
+--
+-- База данных: `Fifa World Cup 2018`
+--
+
+-- --------------------------------------------------------
+
+--
+-- Структура таблицы `Matches`
+--
+
+CREATE TABLE `Matches` (
+  `Id` int(10) NOT NULL,
+  `DayOne` int(10) DEFAULT NULL,
+  `DayTwo` int(10) DEFAULT NULL,
+  `DayThree` int(10) DEFAULT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+
+--
+-- Дамп данных таблицы `Matches`
+--
+
+INSERT INTO `Matches` (`Id`, `DayOne`, `DayTwo`, `DayThree`) VALUES
+(1, 1, 2, 3),
+(2, NULL, NULL, NULL);
+
+-- --------------------------------------------------------
+
+--
+-- Структура таблицы `Results`
+--
+
+CREATE TABLE `Results` (
+  `Id` int(2) NOT NULL,
+  `Diff` int(10) NOT NULL,
+  `Points` int(10) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+
+--
+-- Дамп данных таблицы `Results`
+--
+
+INSERT INTO `Results` (`Id`, `Diff`, `Points`) VALUES
+(1, 0, 0),
+(2, 0, 0),
+(3, 0, 0),
+(4, 0, 0),
+(5, 0, 0),
+(6, 0, 0),
+(7, 0, 0),
+(8, 0, 0),
+(9, 0, 0),
+(10, 0, 0),
+(11, 0, 0),
+(12, 0, 0),
+(13, 0, 0),
+(14, 0, 0),
+(15, 0, 0),
+(16, 0, 0),
+(17, 0, 0),
+(18, 0, 0),
+(19, 0, 0),
+(20, 0, 0),
+(21, 0, 0),
+(22, 0, 0),
+(23, 0, 0),
+(24, 0, 0),
+(25, 0, 0),
+(26, 0, 0),
+(27, 0, 0),
+(28, 0, 0),
+(29, 0, 0),
+(30, 0, 0),
+(31, 0, 0),
+(32, 0, 0);
+
+-- --------------------------------------------------------
+
+--
+-- Структура таблицы `Teams`
+--
+
+CREATE TABLE `Teams` (
+  `Id` int(2) NOT NULL,
+  `Name` varchar(20) NOT NULL,
+  `GroupId` varchar(1) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+
+--
+-- Дамп данных таблицы `Teams`
+--
+
+INSERT INTO `Teams` (`Id`, `Name`, `GroupId`) VALUES
+(1, 'Russia', 'A'),
+(2, 'Saudi Arabia', 'A'),
+(3, 'Egypt', 'A'),
+(4, 'Uruguay', 'A'),
+(5, 'Portugal', 'B'),
+(6, 'Spain', 'B'),
+(7, 'Morocco', 'B'),
+(8, 'Iran', 'B'),
+(9, 'France', 'C'),
+(10, 'Australia', 'C'),
+(11, 'Peru', 'C'),
+(12, 'Denmark', 'C'),
+(13, 'Argentina', 'D'),
+(14, 'Iceland', 'D'),
+(15, 'Croatia', 'D'),
+(16, 'Nigeria', 'D'),
+(17, 'Brazil', 'E'),
+(18, 'Switzerland', 'E'),
+(19, 'Costa-rica', 'E'),
+(20, 'Serbia', 'E'),
+(21, 'Germany', 'H'),
+(22, 'Mexico', 'H'),
+(23, 'Sweden', 'H'),
+(24, 'South Korea', 'H'),
+(25, 'Belgium', 'G'),
+(26, 'Panama', 'G'),
+(27, 'Tunisia', 'G'),
+(28, 'England', 'G'),
+(29, 'Poland', 'F'),
+(30, 'Senegal', 'F'),
+(31, 'Colombia', 'F'),
+(32, 'Japan', 'F');
+
+--
+-- Индексы сохранённых таблиц
+--
+
+--
+-- Индексы таблицы `Matches`
+--
+ALTER TABLE `Matches`
+  ADD PRIMARY KEY (`Id`);
+
+--
+-- Индексы таблицы `Results`
+--
+ALTER TABLE `Results`
+  ADD PRIMARY KEY (`Id`);
+
+--
+-- Индексы таблицы `Teams`
+--
+ALTER TABLE `Teams`
+  ADD PRIMARY KEY (`Id`) USING BTREE;
