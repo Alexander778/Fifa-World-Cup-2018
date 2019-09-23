@@ -1,0 +1,184 @@
+body{
+	background: #cb2d3e; /* fallback for old browsers */
+	background: -webkit-linear-gradient(to right, #cb2d3e, #ef473a); /* Chrome 10-25, Safari 5.1-6 */
+	background: linear-gradient(to right, #cb2d3e, #ef473a);
+}
+#logo{
+	display:inline-block;
+  	/* border: 2px solid yellow; */
+  	padding: 10px;
+  	margin-left:40%;
+	position: absolute; 
+	content: url(/logo.png); 
+	width: 200px;
+}
+.group{
+	/* border: 2px dashed green; */
+  	width: 250px;
+  	height: 150px;
+	margin: 10px;  
+}
+
+.wrapL{
+	/* border: 4px solid white; */
+  	display: inline-block;
+}
+.wrapB{
+	/* border: 4px solid blue; */
+  	display: inline-block;
+  	margin-left: 60px;
+  	position:relative;
+}
+.wrapR{
+	/* border: 4px solid green; */
+  	display: inline-block;
+  	float: right;
+}
+.groupBott{
+	/* border: 2px dashed orange; */
+  	width: 250px;
+  	height: 150px;
+  	margin: 10px;
+  	float: left;
+}
+
+table,tr,td{
+	/* border: 1px solid black; */
+}
+
+table{
+	margin:0 auto;
+}
+
+#matches{
+	border: 2px solid purple;
+}
+.groupDayOne {
+  border: 2px solid brown;
+  margin:5px;
+}
+
+.groupDayTwo{
+	border: 2px solid yellow;
+  	margin:5px;
+}
+.groupDayThree{
+	border: 2px solid green;
+  	margin:5px;
+}
+
+.groupDayOne > div {
+  margin-left:50px;
+  margin-bottom: 10px;
+}
+
+.groupDayTwo > div {
+  margin-left:50px;
+  margin-bottom: 10px;
+}
+.groupDayThree > div {
+  margin-left:50px;
+  margin-bottom: 10px;
+}
+
+.groupA{
+  	display:inline-block;
+	border: 2px dashed violet;
+}
+.groupB{
+  	display:inline-block;
+	border: 2px dashed violet;
+}
+.groupC{
+  	display:inline-block;
+	border: 2px dashed violet;
+}
+.groupD{
+  	display:inline-block;
+	border: 2px dashed violet;
+}
+.groupE{
+  	display:inline-block;
+	border: 2px dashed violet;
+}
+.groupF{
+  	display:inline-block;
+	border: 2px dashed violet;
+}
+.groupG{
+  	display:inline-block;
+	border: 2px dashed violet;
+}
+.groupH{
+  	display:inline-block;
+	border: 2px dashed violet;
+}
+th{
+	font-family: 'Gugi', cursive;
+	color: white;
+	font-size: 16px;
+	font-weight: 900;
+	text-shadow: -1px 0 rgb(100, 43, 16), 0 1px rgb(100, 43, 16), 1px 0 rgb(100, 43, 16), 0 -1px rgb(100, 43, 16);
+}
+table{
+	background: linear-gradient(to bottom, #cd9949 0%, #ebc96d 100%);
+	border-radius: 5%;
+	color: rgb(0,0,136);
+	border: 2px solid red;
+}
+h1{
+	color: rgb(0,0,136);
+	font-family: 'Do Hyeon', sans-serif;
+}
+
+td{
+	font-family: 'Do Hyeon', sans-serif;
+	font-size: 18px;
+	font-weight: 0;
+	color:rgb(100, 43, 16);
+	/* border: 1px solid black; */
+}
+
+label{
+	font-family: 'Gugi', cursive;
+	color: white;
+	font-size: 12px;
+	font-weight: 900;
+	text-shadow: -1px 0 rgb(100, 43, 16), 0 1px rgb(100, 43, 16), 1px 0 rgb(100, 43, 16), 0 -1px rgb(100, 43, 16);
+}
+
+input{
+	font-family: 'Gugi', cursive;
+	color: white;
+	font-size: 12px;
+	font-weight: 900;
+	text-shadow: -1px 0 rgb(100, 43, 16), 0 1px rgb(100, 43, 16), 1px 0 rgb(100, 43, 16), 0 -1px rgb(100, 43, 16);
+	background: linear-gradient(to right, #cb2d3e, #ef473a);
+	outline: none;
+	text-align: center;
+}
+
+img{
+	border: 1px solid white;
+	border-radius: 50%;
+}
+
+#firPLaceA1{
+	background-color: lightgreen;
+}
+#secPLaceA1{
+	background-color: rgb(115, 187, 115);
+}
+
+#thirdPLaceA1{
+	background-color: red;
+}
+#fourPLaceA1{
+	background-color: rgb(218, 137, 137);
+}
+
+.former{
+	border: 2px solid white;
+	display: inline-block;
+}
+

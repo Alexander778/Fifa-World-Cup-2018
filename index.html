@@ -1,0 +1,590 @@
+<html>
+<link rel="stylesheet" href="main.css">   
+<link href="https://fonts.googleapis.com/css?family=Do+Hyeon" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css?family=Gugi" rel="stylesheet">
+<script src="jquery.js"></script> 
+<script src="main.js"></script>
+<!-- <script src="main.php"></script> -->
+<body>
+  <div id="logo">
+    <!-- <img src="logo.png"> -->
+  </div>
+  
+  <div class="wrapL">
+    <div class="group" id="gA">
+        <?php
+        $servername = "localhost";
+        $username = "root";
+        $password = "root";
+        $dbname = "Fifa World Cup 2018";
+        
+        $conn = new mysqli($servername, $username, $password,$dbname);
+        // Check connection
+        // if ($conn->connect_error) {
+        //    die("Connection failed: " . $conn->connect_error);
+        // }
+        //   echo "Connected successfully";
+        
+        $sql = "Select Name,Diff,Points
+        from Teams
+        inner join Results
+        on Teams.Id=Results.Id
+        where GroupId='A'
+        ORDER by Points DESC";
+        if($result = mysqli_query($conn, $sql)){
+            if(mysqli_num_rows($result) > 0){
+                echo "<table>";
+                    echo "<tr>";
+                        echo "<th>Group A</th>";
+                        echo "<td>D</td>";
+                        echo "<td>P</td>";
+                    echo "</tr>";
+                while($row = mysqli_fetch_array($result)){
+                    echo "<tr>";
+                        echo "<td>" . $row['Name'] . "</td>";
+                        echo "<td>" . $row['Diff'] . "</td>";
+                        echo "<td>" . $row['Points'] . "</td>";
+                    echo "</tr>";
+                }
+                echo "</table>";
+                // Free result set
+                mysqli_free_result($result);
+            } else{
+                echo "No records matching your query were found.";
+            }
+        } else{
+            echo "ERROR: Could not able to execute $sql. " . mysqli_error($conn);
+        }
+         
+        // Close connection
+        mysqli_close($conn);
+          
+        ?>
+
+      
+     
+    </div>
+    <div class="group" id="gB">
+        <?php
+        $servername = "localhost";
+        $username = "root";
+        $password = "root";
+        $dbname = "Fifa World Cup 2018";
+        
+        $conn = new mysqli($servername, $username, $password,$dbname);
+        // Check connection
+        // if ($conn->connect_error) {
+        //    die("Connection failed: " . $conn->connect_error);
+        // }
+        //   echo "Connected successfully";
+        
+        $sql = "Select Name,Diff,Points
+        from Teams
+        inner join Results
+        on Teams.Id=Results.Id
+        where GroupId='B'
+        ORDER by Points DESC";
+        if($result = mysqli_query($conn, $sql)){
+            if(mysqli_num_rows($result) > 0){
+                echo "<table>";
+                    echo "<tr>";
+                        echo "<th>Group B</th>";
+                        echo "<td>D</td>";
+                        echo "<td>P</td>";
+                    echo "</tr>";
+                while($row = mysqli_fetch_array($result)){
+                    echo "<tr>";
+                        echo "<td>" . $row['Name'] . "</td>";
+                        echo "<td>" . $row['Diff'] . "</td>";
+                        echo "<td>" . $row['Points'] . "</td>";
+                    echo "</tr>";
+                }
+                echo "</table>";
+                // Free result set
+                mysqli_free_result($result);
+            } else{
+                echo "No records matching your query were found.";
+            }
+        } else{
+            echo "ERROR: Could not able to execute $sql. " . mysqli_error($conn);
+        }
+         
+        // Close connection
+        mysqli_close($conn);
+          
+       
+        ?>
+    </div>
+    <div class="group" id="gC">
+        <?php
+        include('db.php');
+        $sql = "Select Name,Diff,Points
+        from Teams
+        inner join Results
+        on Teams.Id=Results.Id
+        where GroupId='C'
+        ORDER by Points DESC";
+        if($result = mysqli_query($conn, $sql)){
+            if(mysqli_num_rows($result) > 0){
+                echo "<table>";
+                    echo "<tr>";
+                        echo "<th>Group C</th>";
+                        echo "<td>D</td>";
+                        echo "<td>P</td>";
+                    echo "</tr>";
+                while($row = mysqli_fetch_array($result)){
+                    echo "<tr>";
+                        echo "<td>" . $row['Name'] . "</td>";
+                        echo "<td>" . $row['Diff'] . "</td>";
+                        echo "<td>" . $row['Points'] . "</td>";
+                    echo "</tr>";
+                }
+                echo "</table>";
+                // Free result set
+                mysqli_free_result($result);
+            } else{
+                echo "No records matching your query were found.";
+            }
+        } else{
+            echo "ERROR: Could not able to execute $sql. " . mysqli_error($conn);
+        }
+         
+        // Close connection
+        mysqli_close($conn);
+          
+        ?>
+  </div>
+  </div>
+  
+  <div class="wrapB">
+    <div class="groupBott" id="gD">
+        <?php
+        $servername = "localhost";
+        $username = "root";
+        $password = "root";
+        $dbname = "Fifa World Cup 2018";
+        
+        $conn = new mysqli($servername, $username, $password,$dbname);
+        // Check connection
+        // if ($conn->connect_error) {
+        //    die("Connection failed: " . $conn->connect_error);
+        // }
+        //   echo "Connected successfully";
+        
+        $sql = "Select Name,Diff,Points
+        from Teams
+        inner join Results
+        on Teams.Id=Results.Id
+        where GroupId='D'
+        ORDER by Points DESC";
+        if($result = mysqli_query($conn, $sql)){
+            if(mysqli_num_rows($result) > 0){
+                echo "<table>";
+                    echo "<tr>";
+                        echo "<th>Group D</th>";
+                        echo "<td>D</td>";
+                        echo "<td>P</td>";
+                    echo "</tr>";
+                while($row = mysqli_fetch_array($result)){
+                    echo "<tr>";
+                        echo "<td>" . $row['Name'] . "</td>";
+                        echo "<td>" . $row['Diff'] . "</td>";
+                        echo "<td>" . $row['Points'] . "</td>";
+                    echo "</tr>";
+                }
+                echo "</table>";
+                // Free result set
+                mysqli_free_result($result);
+            } else{
+                echo "No records matching your query were found.";
+            }
+        } else{
+            echo "ERROR: Could not able to execute $sql. " . mysqli_error($conn);
+        }
+         
+        // Close connection
+        mysqli_close($conn);
+          
+        
+        ?>
+      </table>
+    </div>
+    <div class="groupBott" id="gE">
+        <?php
+        $servername = "localhost";
+        $username = "root";
+        $password = "root";
+        $dbname = "Fifa World Cup 2018";
+        
+        $conn = new mysqli($servername, $username, $password,$dbname);
+        // Check connection
+        // if ($conn->connect_error) {
+        //    die("Connection failed: " . $conn->connect_error);
+        // }
+        //   echo "Connected successfully";
+        
+        $sql = "Select Name,Diff,Points
+        from Teams
+        inner join Results
+        on Teams.Id=Results.Id
+        where GroupId='E'
+        ORDER by Points DESC";
+        if($result = mysqli_query($conn, $sql)){
+            if(mysqli_num_rows($result) > 0){
+                echo "<table>";
+                    echo "<tr>";
+                        echo "<th>Group E</th>";
+                        echo "<td>D</td>";
+                        echo "<td>P</td>";
+                    echo "</tr>";
+                while($row = mysqli_fetch_array($result)){
+                    echo "<tr>";
+                        echo "<td>" . $row['Name'] . "</td>";
+                        echo "<td>" . $row['Diff'] . "</td>";
+                        echo "<td>" . $row['Points'] . "</td>";
+                    echo "</tr>";
+                }
+                echo "</table>";
+                // Free result set
+                mysqli_free_result($result);
+            } else{
+                echo "No records matching your query were found.";
+            }
+        } else{
+            echo "ERROR: Could not able to execute $sql. " . mysqli_error($conn);
+        }
+         
+        // Close connection
+        mysqli_close($conn);
+          
+        ?>
+    </div>
+  </div>
+  
+  <div class="wrapR"> 
+    <div class="group" id="gH">
+        <?php
+        $servername = "localhost";
+        $username = "root";
+        $password = "root";
+        $dbname = "Fifa World Cup 2018";
+        
+        $conn = new mysqli($servername, $username, $password,$dbname);
+        // Check connection
+        // if ($conn->connect_error) {
+        //    die("Connection failed: " . $conn->connect_error);
+        // }
+        //   echo "Connected successfully";
+        
+        $sql = "Select Name,Diff,Points
+        from Teams
+        inner join Results
+        on Teams.Id=Results.Id
+        where GroupId='H'
+        ORDER by Points DESC";
+        if($result = mysqli_query($conn, $sql)){
+            if(mysqli_num_rows($result) > 0){
+                echo "<table>";
+                    echo "<tr>";
+                        echo "<th>Group H</th>";
+                        echo "<td>D</td>";
+                        echo "<td>P</td>";
+                    echo "</tr>";
+                while($row = mysqli_fetch_array($result)){
+                    echo "<tr>";
+                        echo "<td>" . $row['Name'] . "</td>";
+                        echo "<td>" . $row['Diff'] . "</td>";
+                        echo "<td>" . $row['Points'] . "</td>";
+                    echo "</tr>";
+                }
+                echo "</table>";
+                // Free result set
+                mysqli_free_result($result);
+            } else{
+                echo "No records matching your query were found.";
+            }
+        } else{
+            echo "ERROR: Could not able to execute $sql. " . mysqli_error($conn);
+        }
+         
+        // Close connection
+        mysqli_close($conn);
+          
+        
+        ?>
+    </div>
+    <div class="group" id="gG">
+    <table>
+        <?php
+        $servername = "localhost";
+        $username = "root";
+        $password = "root";
+        $dbname = "Fifa World Cup 2018";
+        
+        $conn = new mysqli($servername, $username, $password,$dbname);
+        // Check connection
+        // if ($conn->connect_error) {
+        //    die("Connection failed: " . $conn->connect_error);
+        // }
+        //   echo "Connected successfully";
+        
+        $sql = "Select Name,Diff,Points
+        from Teams
+        inner join Results
+        on Teams.Id=Results.Id
+        where GroupId='G'
+        ORDER by Points DESC";
+        if($result = mysqli_query($conn, $sql)){
+            if(mysqli_num_rows($result) > 0){
+                echo "<table>";
+                    echo "<tr>";
+                        echo "<th>Group G</th>";
+                        echo "<td>D</td>";
+                        echo "<td>P</td>";
+                    echo "</tr>";
+                while($row = mysqli_fetch_array($result)){
+                    echo "<tr>";
+                        echo "<td>" . $row['Name'] . "</td>";
+                        echo "<td>" . $row['Diff'] . "</td>";
+                        echo "<td>" . $row['Points'] . "</td>";
+                    echo "</tr>";
+                }
+                echo "</table>";
+                // Free result set
+                mysqli_free_result($result);
+            } else{
+                echo "No records matching your query were found.";
+            }
+        } else{
+            echo "ERROR: Could not able to execute $sql. " . mysqli_error($conn);
+        }
+         
+        // Close connection
+        mysqli_close($conn);
+          
+        
+        ?>
+    </div>
+    <div class="group" id="gF">
+        <?php
+        $servername = "localhost";
+        $username = "root";
+        $password = "root";
+        $dbname = "Fifa World Cup 2018";
+        
+        $conn = new mysqli($servername, $username, $password,$dbname);
+        // Check connection
+        // if ($conn->connect_error) {
+        //    die("Connection failed: " . $conn->connect_error);
+        // }
+        //   echo "Connected successfully";
+        
+        $sql = "Select Name,Diff,Points
+        from Teams
+        inner join Results
+        on Teams.Id=Results.Id
+        where GroupId='F'
+        ORDER by Points DESC";
+        if($result = mysqli_query($conn, $sql)){
+            if(mysqli_num_rows($result) > 0){
+                echo "<table>";
+                    echo "<tr>";
+                        echo "<th>Group F </th>";
+                        echo "<td>D</td>";
+                        echo "<td>P</td>";
+                    echo "</tr>";
+                while($row = mysqli_fetch_array($result)){
+                    echo "<tr>";
+                        echo "<td>" . $row['Name'] . "</td>";
+                        echo "<td>" . $row['Diff'] . "</td>";
+                        echo "<td>" . $row['Points'] . "</td>";
+                    echo "</tr>";
+                }
+                echo "</table>";
+                // Free result set
+                mysqli_free_result($result);
+            } else{
+                echo "No records matching your query were found.";
+            }
+        } else{
+            echo "ERROR: Could not able to execute $sql. " . mysqli_error($conn);
+        }
+         
+        // Close connection
+        mysqli_close($conn);
+          
+       
+        ?>
+    </div>
+  </div>
+  <!-- SELECT GroupId FROM Teams
+  group by GroupId -->
+<div class="former">
+    <form action="insert.php">
+        <label for="group">Group</label>
+            <select name="group" id="group" onChange="getTeams(this.value)" >
+                    <option value="">Select Group</option>
+                    <?php 
+                    $servername = "localhost";
+                    $username = "root";
+                    $password = "root";
+                    $dbname = "Fifa World Cup 2018";
+                    
+                    $conn = new mysqli($servername, $username, $password,$dbname);
+                    // Check connection
+                    $sql = mysqli_query($conn, "SELECT GroupId FROM Teams
+                    group by GroupId");
+                    while ($row = $sql->fetch_assoc()){
+                    echo "<option value='" . $row['GroupId'] . "'>" . $row['GroupId'] . "</option>";
+                    }
+                    ?>
+            </select>
+            <label for="">GameDay</label>
+            <select name="" id="">
+                <option value="">Day1</option>
+                <option value="">Day2</option>
+                <option value="">Day3</option>
+            </select>
+            <!-- <select name="teams" id="teams">
+                <option value="">Select Team</option>
+            </select> -->
+
+
+                <br>
+
+        <label for="TeamOne">Team1</label>
+            <select name="teams1" id="teams1">
+            </select>
+        
+                <input name="firTeamG" type="text" style="width:15px;">
+                <input name="secTeamG" type="text" style="width:15px;">
+
+        <label for="TeamTwo">Team2</label>
+            <select name="teams2" id="teams2">
+            </select>
+
+        <input type="submit" value="Add">
+    </form>
+</div>
+
+  <div id="matches">
+      <div class="groupDayOne">
+        <span><h1>Day 1</h1></span> 
+       
+        
+         <div class="groupA">
+            
+          <div><label for="D1A1"><img src="flags/russia.png"></img> Russia  </label><input type="text" id="D1A1" value="" name="D1A1" style = "width:15px; height:20px;"> : <input type="text" id="D1A2"  value="" name="D1A2" style="width: 15px; height:20px;"><label for="D1A2"> <img src="flags/saudi-arabia.png"></img> Saudi Arabia</label></div>
+          <div><label for="D1A3" style="margin-right: 9px;"><img src="flags/egypt.png"></img> Egypt </label><input type="text" id="D1A3"  style="width: 15px; height:20px;"> : <input type="text" id="D1A4" style="width: 15px; height:20px;"><label for="D1A2"> <img src="flags/uruguay.png"></img> Uruguay</label></div>
+        </div>
+        <div class="groupB">
+                <div><label for="D1B1" style="margin-left: 2px;"><img src="flags/portugal.png"></img> Portugal </label><input type="text" id="D1B1" style="width: 15px; height:20px;"> : <input type="text" id="D1B2" style="width: 15px; height:20px;"><label for="D1B2"> <img src="flags/spain.png"></img> Spain</label></div>
+      
+                <div><label for="D1B3"><img src="flags/morocco.png"></img> Morocco </label><input type="text" id="D1B3" style="width: 15px; height:20px;"> : <input type="text" id="D1B4" style="width: 15px; height:20px;"><label for="D1B4"> <img src="flags/iran.png"></img> Iran</label></div>
+              </div>
+              <div class="groupC">
+                <div><label for="D1C1"><img src="flags/france.png"></img>France </label><input type="text" id="D1C1" style="width: 15px; height:20px;"> : <input type="text" id="D1C2" style="width: 15px; height:20px;"><label for="D1C2"> <img src="flags/australia.png"></img> Australia</label></div>
+      
+                <div><label for="D1C3" style="margin-left:10px;"><img src="flags/peru.png"></img> Peru </label><input type="text" id="D1C3" style="width: 15px; height:20px;"> : <input type="text" id="D1C4" style="width: 15px; height:20px;"><label for="D1C4"> <img src="flags/denmark.png"></img> Denmark</label></div>
+              </div>
+              <div class="groupD">
+                <div><label for="D1D1"><img src="flags/argentina.png"></img> Argentina </label><input type="text" id="D1D1" style="width: 15px; height:20px;"> : <input type="text" id="D1D2" style="width: 15px; height:20px;"><label for="D1D2"> <img src="flags/iceland.png"></img> Iceland</label></div>
+      
+                <div><label for="D1D3" style="margin-left: 15px;"><img src="flags/croatia.png"></img> Croatia </label><input type="text" id="D1D3" style="width: 15px; height:20px;"> : <input type="text" id="D1D4" style="width: 15px; height:20px;"><label for="D1D4"> <img src="flags/nigeria.png"></img> Nigeria</label></div>
+              </div>
+              <div class="groupE">
+                <div><label for="D1E1"><img src="flags/brazil.png"></img> Brazil </label><input type="text" id="D1E1" style="width: 15px; height:20px;"> : <input type="text" id="D1E2" style="width: 15px; height:20px;"><label for="D1E2"> <img src="flags/switzerland.png"></img> Switzerland</label></div>
+      
+                <div><label for="D1E3"><img src="flags/costa-rica.png"></img> Costa-rica </label><input type="text" id="D1E3" style="width: 15px; height:20px;"> : <input type="text" id="D1E4" style="width: 15px; height:20px;"><label for="D1E4"> <img src="flags/serbia.png"></img> Serbia</label></div>
+              </div>
+              <div class="groupF">
+                <div><label for="D1F1" style="margin-left: 14px;"><img src="flags/poland.png"></img> Poland </label><input type="text" id="D1F1" style="width: 15px; height:20px;"> : <input type="text" id="D1F2" style="width: 15px; height:20px;"><label for="D1F2"> <img src="flags/senegal.png"></img> Senegal</label></div>
+      
+                <div><label for="D1F3"><img src="flags/colombia.png"></img> Colombia </label><input type="text" id="D1F3" style="width: 15px; height:20px;"> : <input type="text" id="D1F4" style="width: 15px; height:20px;"><label for="D1F4"> <img src="flags/japan.png"></img> Japan</label></div>
+              </div>
+              <div class="groupG">
+                <div><label for="D1G1"><img src="flags/belgium.png"></img> Belgium </label><input type="text" id="D1G1" style="width: 15px; height:20px;"> : <input type="text" id="D1G2" style="width: 15px; height:20px;"><label for="D1G2"> <img src="flags/panama.png"></img> Panama</label></div>
+      
+                <div><label for="D1G3" style="margin-left: 4px;"><img src="flags/tunisia.png"></img> Tunisia </label><input type="text" id="D1G3" style="width: 15px; height:20px;"> : <input type="text" id="D1G4" style="width: 15px; height:20px;"><label for="D1G4"> <img src="flags/england.png"></img> England</label></div>
+              </div>
+              <div class="groupH">
+                <div><label for="D1H1"><img src="flags/germany.png"></img> Germany </label><input type="text" id="D1H1" style="width: 15px; height:20px;"> : <input type="text" id="D1H2" style="width: 15px; height:20px;"><label for="D1H2"> <img src="flags/mexico.png"></img> Mexico</label></div>
+      
+                <div><label for="D1H3" style="margin-left: 5px;"><img src="flags/sweden.png"></img> Sweden </label><input type="text" id="D1H3" style="width: 15px; height:20px;"> : <input type="text" id="D1H4" style="width: 15px; height:20px;"><label for="D1H4"> <img src="flags/south-korea.png"></img> South Korea</label></div>
+              </div> 
+      </div>
+      <div class="groupDayTwo">
+          <h1>Day 2</h1>
+        <div class="groupA">
+          <div><label for="D2A1" style="margin-right: 34px;"><img src="flags/russia.png"></img> Russia </label><input type="text" id="D2A1" style="width: 15px; height:20px;"> : <input type="text" id="D2A3" style="width: 15px; height:20px;"><label for="D2A3"> <img src="flags/egypt.png"></img> Egypt </label></div>
+          <div><label for="D2A2"><img src="flags/saudi-arabia.png"></img> Saudi Arabia </label><input type="text" id="D2A2" style="width: 15px; height:20px;"> : <input type="text" id="D3A4" style="width: 15px; height:20px;"><label for="D2A4"> <img src="flags/uruguay.png"></img> Uruguay</label></div>
+        </div>
+        <div class="groupB">
+          <div><label for="D2B1"><img src="flags/portugal.png"></img> Portugal </label><input type="text" id="D2B1" style="width: 15px; height:20px;"> : <input type="text" id="D2B3" style="width: 15px; height:20px;"><label for="D2B3"> <img src="flags/morocco.png"></img> Morocco</label></div>
+          <div><label for="D2B2" style="margin-left: 15px;"><img src="flags/spain.png"></img> Spain </label><input type="text" id="D2B2" style="width: 15px; height:20px;"> : <input type="text" id="D2B4" style="width: 15px; height:20px;"><label for="D2B4"> <img src="flags/iran.png"></img> Iran</label></div>
+        </div>
+        <div class="groupC">
+          <div><label for="D2C1" style="margin-left: 11px;"><img src="flags/france.png"></img> France </label><input type="text" id="D2C1" style="width: 15px; height:20px;"> : <input type="text" id="D2C3" style="width: 15px; height:20px;"><label for="D2C3"> <img src="flags/peru.png"></img> Peru</label></div>
+          <div><label for="D2C2"><img src="flags/australia.png"></img> Australia </label><input type="text" id="D2C2" style="width: 15px; height:20px;"> : <input type="text" id="D2C4" style="width: 15px; height:20px;"><label for="D2C4"> <img src="flags/denmark.png"></img> Denmark</label></div>
+        </div>
+        <div class="groupD">
+          <div><label for="D2D1"><img src="flags/argentina.png"></img> Argentina </label><input type="text" id="D2D1" style="width: 15px; height:20px;"> : <input type="text" id="D2D3" style="width: 15px; height:20px;"><label for="D2D3"> <img src="flags/croatia.png"></img> Croatia</label></div>
+          <div><label for="D2D2" style="margin-left: 15px;"><img src="flags/iceland.png"></img> Iceland </label><input type="text" id="D2D2" style="width: 15px; height:20px;"> : <input type="text" id="D2D4" style="width: 15px; height:20px;"><label for="D2D4"> <img src="flags/nigeria.png"></img> Nigeria</label></div>
+        </div>
+        <div class="groupE">
+        <div><label for="D2E1"><img src="flags/brazil.png"></img> Brazil </label><input type="text" id="D2E1" style="width: 15px; height:20px;"> : <input type="text" id="D2E3" style="width: 15px; height:20px;"><label for="D2E3"> <img src="flags/costa-rica.png"></img> Costa-rica</label></div>
+          <div><label for="D2E2"><img src="flags/switzerland.png"></img> Switzerland </label><input type="text" id="D2E2" style="width: 15px; height:20px;"> : <input type="text" id="D2E4" style="width: 15px; height:20px;"><label for="D2E4"> <img src="flags/serbia.png"></img> Serbia</label></div>
+        </div>
+        <div class="groupF">
+          <div><label for="D2F1" style="margin-left: 8px;"><img src="flags/poland.png"></img> Poland </label><input type="text" id="D2F1" style="width: 15px; height:20px;"> : <input type="text" id="D2F3" style="width: 15px; height:20px;"><label for="D2F3"> <img src="flags/colombia.png"></img> Colombia</label></div>
+          <div><label for="D2F2"><img src="flags/senegal.png"></img> Senegal </label><input type="text" id="D2F2" style="width: 15px; height:20px;"> : <input type="text" id="D2F4" style="width: 15px; height:20px;"><label for="D2F4"> <img src="flags/japan.png"></img> Japan</label></div>
+      </div>
+        <div class="groupG">
+          <div><label for="D2G1" style="margin-left: 1px;"><img src="flags/belgium.png"></img> Belgium </label><input type="text" id="D2G1" style="width: 15px; height:20px;"> : <input type="text" id="D2G3" style="width: 15px; height:20px;"><label for="D2G3"> <img src="flags/tunisia.png"></img> Tunisia</label></div>
+          <div><label for="D2G2"><img src="flags/panama.png"></img> Panama </label><input type="text" id="D2G2" style="width: 15px; height:20px;"> : <input type="text" id="D2G4" style="width: 15px; height:20px;"><label for="D2G4"> <img src="flags/england.png"></img> England</label></div>
+        </div>
+        <div class="groupH">
+          <div><label for="D2H1"><img src="flags/germany.png"></img> Germany </label><input type="text" id="D2H1" style="width: 15px; height:20px;"> : <input type="text" id="D2H3" style="width: 15px; height:20px;"><label for="D2H3"> <img src="flags/sweden.png"></img> Sweden</label></div>
+          <div><label for="D2H2" style="margin-left: 10px;"><img src="flags/mexico.png"></img> Mexico </label><input type="text" id="D2H2" style="width: 15px; height:20px;"> : <input type="text" id="D2H4" style="width: 15px; height:20px;"><label for="D2H4"> <img src="flags/south-korea.png"></img> South Korea</label></div>
+        </div>
+      </div>
+      <div class="groupDayThree">
+        <h1>Day 3</h1>
+      <div class="groupA">
+            <div><label for="D3A1"><img src="flags/russia.png"></img> Russia  </label><input type="text" id="D3A1" style="width: 15px; height:20px;"> : <input type="text" id="D3A4" style="width: 15px; height:20px;"><label for="D3A4"> <img src="flags/uruguay.png"></img> Uruguay</label></div>
+            <div><label for="D3A3" style="margin-right: 9px;"><img src="flags/egypt.png"></img> Egypt  </label><input type="text" id="D2A3" style="width: 15px; height:20px;"> : <input type="text" id="D3A2" style="width: 15px; height:20px;"><label for="D3A2"> <img src="flags/saudi-arabia.png"></img> Saudi Arabia</label></div>
+      </div>
+      <div class="groupB">
+        <div><label for="D3B1" style="margin-left: 2px;"><img src="flags/portugal.png"></img> Portugal </label><input type="text" id="D3B1" style="width: 15px; height:20px;"> : <input type="text" id="D3B4" style="width: 15px; height:20px;"><label for="D3B4"> <img src="flags/iran.png"></img> Iran</label></div>
+        <div><label for="D3B3"><img src="flags/morocco.png"></img> Morocco </label><input type="text" id="D3B3" style="width: 15px; height:20px;"> : <input type="text" id="D3B2" style="width: 15px; height:20px;"><label for="D3B2"> <img src="flags/spain.png"></img> Spain</label></div>
+      </div>
+      <div class="groupC">
+            <div><label for="D3C1"><img src="flags/france.png"></img>France </label><input type="text" id="D3C1" style="width: 15px; height:20px;"> : <input type="text" id="D3C4" style="width: 15px; height:20px;"><label for="D3C4"> <img src="flags/denmark.png"></img> Denmark</label></div>
+            <div><label for="D3C3" style="margin-left: 10px;"><img src="flags/peru.png"></img> Peru </label><input type="text" id="D3C3" style="width: 15px; height:20px;"> : <input type="text" id="D3C2" style="width: 15px; height:20px;"><label for="D3C2"> <img src="flags/australia.png"></img> Australia</label></div>
+      </div>
+      <div class="groupD">
+            <div><label for="D3D1"><img src="flags/argentina.png"></img> Argentina </label><input type="text" id="D3D1" style="width: 15px; height:20px;"> : <input type="text" id="D3D4" style="width: 15px; height:20px;"><label for="D3D4"> <img src="flags/nigeria.png"></img> Nigeria</label></div>
+            <div><label for="D3D3" style="margin-left: 15px;"><img src="flags/croatia.png"></img> Croatia </label><input type="text" id="D3D3" style="width: 15px; height:20px;"> : <input type="text" id="D3D2" style="width: 15px; height:20px;"><label for="D3D2"> <img src="flags/iceland.png"></img> Iceland</label></div>
+      </div> 
+      <div class="groupE">
+            <div><label for="D3E1"><img src="flags/brazil.png"></img> Brazil </label><input type="text" id="D3E1" style="width: 15px; height:20px;"> : <input type="text" id="D3E4" style="width: 15px; height:20px;"><label for="D3E4"> <img src="flags/serbia.png"></img> Serbia</label></div>
+            <div><label for="D3E3"><img src="flags/costa-rica.png"></img> Costa-rica </label><input type="text" id="D3E3" style="width: 15px; height:20px;"> : <input type="text" id="D3E2" style="width: 15px; height:20px;"><label for="D3E2"> <img src="flags/switzerland.png"></img> Switzerland</label></div>
+      </div>
+      <div class="groupF">
+            <div><label for="D3F1" style="margin-left: 14px;"><img src="flags/poland.png"></img> Poland </label><input type="text" id="D3F1" style="width: 15px; height:20px;"> : <input type="text" id="D3F4" style="width: 15px; height:20px;"><label for="D3F4"> <img src="flags/japan.png"></img> Japan</label></div>
+            <div><label for="D3F3"><img src="flags/colombia.png"></img> Colombia </label><input type="text" id="D3F3" style="width: 15px; height:20px;"> : <input type="text" id="D3F2" style="width: 15px; height:20px;"><label for="D3F2"> <img src="flags/senegal.png"></img> Senegal</label></div>
+      </div>
+      <div class="groupG">
+            <div><label for="D3G1"><img src="flags/belgium.png"></img> Belgium </label><input type="text" id="D3G1" style="width: 15px; height:20px;"> : <input type="text" id="D3G4" style="width: 15px; height:20px;"><label for="D3G4"> <img src="flags/england.png"></img> England</label></div>
+            <div><label for="D3G3" style="margin-left: 4px;"><img src="flags/tunisia.png"></img> Tunisia </label><input type="text" id="D3G3" style="width: 15px; height:20px;"> : <input type="text" id="D3G2" style="width: 15px; height:20px;"><label for="D3G2"> <img src="flags/panama.png"></img> Panama</label></div>
+      </div>
+      <div class="groupH">
+            <div><label for="D3H1"><img src="flags/germany.png"></img> Germany </label><input type="text" id="D3H1" style="width: 15px; height:20px;"> : <input type="text" id="D3H4" style="width: 15px; height:20px;"><label for="D3H4"> <img src="flags/south-korea.png"></img> South Korea</label></div>
+            <div><label for="D3H3" style="margin-left: 5px;"><img src="flags/sweden.png"></img> Sweden </label><input type="text" id="D2H3" style="width: 15px; height:20px;"> : <input type="text" id="D3H2" style="width: 15px; height:20px;"><label for="D3H2"> <img src="flags/mexico.png"></img> Mexico</label></div>
+      </div>
+
+    </div>
+  </div>
+</body>
+</html>
+
