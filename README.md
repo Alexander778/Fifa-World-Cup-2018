@@ -7,6 +7,8 @@ When I was a child, I've written all results of Fifa World Cup matches to my cop
 
 So I've decided to make online copybook for World Cup in 2018 on php, simple MySql database, html and javascript.
 
+To open this project on your machine, you should download MAMP https://www.mamp.info/en/ and create database there (use database.txt).
+
 There are some screenshots:
 
 Main interface (Group Stage)
